@@ -54,7 +54,14 @@ public class Lab3_SergioAlessandro {
     
     
     public static void main(String[] args) {
-        jugadas.add(new Jugadas());
+        jugadas.add(new Jugadas("La mejor", "cuatro pases en el area propia y darle el pase a Kobe y que haga todo", 100));
+        jugadas.add(new Jugadas("La estupida", "cuatro pases en el area propia, amagar pase a la derecha, despues "
+                + "a la izquierda, mientras se descuelga un jugador por el centro, darle el pase a el", 60));
+        jugadas.add(new Jugadas("la escopeta", "se desplegan los 5 jugadores en la cancha, el del centro mas adelantado"
+                + " darle el pase al jugador del centro, y atacar todos juntos, dando el pase como deseen, "
+                + "permaneciendo la misma formacion, hasta poder tirar", 40));
+        libresj.add(new Jugador(13, 10, 10, 10, 10, 10, 10, 10, 200, "KObe", "Bryant", 33, 20000000));
+        
         char resp = 's';
         while (resp == 's') {
             System.out.println("Que opcion quiere utilizar:"
