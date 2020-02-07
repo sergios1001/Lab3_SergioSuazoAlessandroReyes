@@ -36,7 +36,7 @@ public class Lab3_SergioAlessandro {
     public static ArrayList<Medico> medicos = new ArrayList();
     public static ArrayList<Equipo> equipos = new ArrayList();
     public static ArrayList<Jugadas> jugadas = new ArrayList();
-    
+    public static ArrayList<Dueño> dueños = new ArrayList();
     
     
     
@@ -60,8 +60,28 @@ public class Lab3_SergioAlessandro {
         jugadas.add(new Jugadas("la escopeta", "se desplegan los 5 jugadores en la cancha, el del centro mas adelantado"
                 + " darle el pase al jugador del centro, y atacar todos juntos, dando el pase como deseen, "
                 + "permaneciendo la misma formacion, hasta poder tirar", 40));
-        libresj.add(new Jugador(13, 10, 10, 10, 10, 10, 10, 10, 200, "KObe", "Bryant", 33, 20000000));
-        
+        libresj.add(new Escolta(13, 99, 99, 99, 99, 99, 99, 99, "K0be", "Bryant", 30, 30000000));
+        libresj.add(new Base(22, 99, 40, 99, 70, 40, 80, 90, "Stephen", "Curry", 22, 10000000));
+        libresj.add(new Alero(23, 80, 99, 99, 99, 60, 80, 90, "Lebron", "James", 24, 15000000));
+        libresj.add(new Pivot(24, 99, 99, 99, 99, 99, 99, 99, "Michael", "Jordan", 29, 30000000));
+        libresj.add(new Centro(10, 70, 70, 70, 70, 70, 70, 70,"Kevin", "Durant", 33, 15000000));
+        libresj.add(new Escolta(33, 99, 99, 99, 99, 99, 99, 99, "Kemba", "Walker", 33, 20000000));
+        dueños.add(new Dueño(1000000000, "Madrid", "Fiorentino", "Perez", 65, 23000000));
+        medicos.add(new Cirujano(100, "Unah", "Ian", "Barrientos", 23, 100000));
+        medicos.add(new MedicoGeneral(100, "Unah", "Ian", "Barrientos", 23, 100000));
+        medicos.add(new Terapeuta(100, "Unah", "Ian", "Barrientos", 23, 100000));
+        equipos.add(new Equipo("Linces", dueños.get(0)));
+        equipos.get(0).getMedicos().add(medicos.get(1));
+        equipos.get(0).getMedicos().add(medicos.get(0));
+        equipos.get(0).getMedicos().add(medicos.get(2));
+        equipos.get(0).getJugadores().add(libresj.get(0));
+        equipos.get(0).getJugadores().add(libresj.get(1));
+        equipos.get(0).getJugadores().add(libresj.get(2));
+        equipos.get(0).getJugadores().add(libresj.get(3));
+        equipos.get(0).getJugadores().add(libresj.get(4));
+        equipos.get(0).getJugadas().add(jugadas.get(0));
+        equipos.get(0).getJugadas().add(jugadas.get(1));
+        equipos.get(0).getJugadas().add(jugadas.get(2));
         char resp = 's';
         while (resp == 's') {
             System.out.println("Que opcion quiere utilizar:"
@@ -87,6 +107,15 @@ public class Lab3_SergioAlessandro {
                     char opm1 = leer.next().charAt(0);
                     switch(opm1){
                         case 'a'://jugador
+                            System.out.println("De que posicion juega su jugador:"
+                                    + "\n1) Base"
+                                    + "\n2) Escolta"
+                                    + "\n3) Alero"
+                                    + "\n4) Pivot"
+                                    + "\n5) Centro"
+                                    + "Elija una opcion: ");
+                            
+                                    
                             System.out.println("Cual es el nombre del jugador: ");
                             String nombre = leer.next();
                             System.out.println("Cual es el apellido del jugador: ");
@@ -95,6 +124,21 @@ public class Lab3_SergioAlessandro {
                             int edad = leer.nextInt();
                             System.out.println("de cuanto es el salario del jugador");
                             int sal = leer.nextInt();
+                            System.out.println("Cuanto de tiro de 3 tiene: ");
+                            int tir3 = leer.nextInt();
+                            System.out.println("Cuanto de defensa tiene: ");
+                            int def = leer.nextInt();
+                            System.out.println("Cuanto de media tiene: ");
+                            int media = leer.nextInt();
+                            System.out.println("Cuanto de rebote tiene: ");
+                            int rebote = leer.nextInt();
+                            System.out.println("Cuanto de bandeja tiene: ");
+                            int bandeja = leer.nextInt();
+                            System.out.println("Cuanto de pases tiene: ");
+                            int pases = leer.nextInt();
+                            System.out.println("Cuanto de posteo tiene: ");
+                            int posteo = leer.nextInt();
+                            
                             break;
                         case 'b'://Medico
                             System.out.println("Cual es el nombre del Medico: ");
