@@ -91,12 +91,33 @@ public class Lab3_SergioAlessandro {
                             
                             break;
                         case 'b'://Medico
+                            System.out.println("Cual es el nombre del Medico: ");
+                            
+                            System.out.println("Cual es el apellido del Medico: ");
+                            
+                            System.out.println("Cuantos años tiene el Medico: ");
+                            
+                            System.out.println("de cuanto es el salario del Medico");
                             
                             break;
                         case 'c'://Dueño
+                            System.out.println("Cual es el nombre del Dueño: ");
+                            
+                            System.out.println("Cual es el apellido del Dueño: ");
+                            
+                            System.out.println("Cuantos años tiene el Dueño: ");
+                            
+                            System.out.println("de cuanto es el salario del Dueño");
                             
                             break;
                         case 'd'://Entrenador
+                            System.out.println("Cual es el nombre del Entrenador: ");
+                            
+                            System.out.println("Cual es el apellido del Entrenador: ");
+                            
+                            System.out.println("Cuantos años tiene el Entrenador: ");
+                            
+                            System.out.println("de cuanto es el salario del Entrenador");
                             
                             break;
                         case 'e'://Equipo
