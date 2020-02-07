@@ -68,8 +68,8 @@ public class Lab3_SergioAlessandro {
         libresj.add(new Escolta(33, 99, 99, 99, 99, 99, 99, 99, "Kemba", "Walker", 33, 20000000));
         dueños.add(new Dueño(1000000000, "Madrid", "Fiorentino", "Perez", 65, 23000000));
         medicos.add(new Cirujano(100, "Unah", "Ian", "Barrientos", 23, 100000));
-        medicos.add(new MedicoGeneral(100, "Unah", "Ian", "Barrientos", 23, 100000));
-        medicos.add(new Terapeuta(100, "Unah", "Ian", "Barrientos", 23, 100000));
+        medicos.add(new MedicoGeneral(100, "Unah", "Maria", "Aguilar", 23, 100000));
+        medicos.add(new Terapeuta(100, "Unah", "Alejandra", "Lopez", 23, 100000));
         equipos.add(new Equipo("Linces","2000", dueños.get(0), 200));
         equipos.get(0).getMedicos().add(medicos.get(1));
         equipos.get(0).getMedicos().add(medicos.get(0));
@@ -105,10 +105,10 @@ public class Lab3_SergioAlessandro {
                             + "\nf) jugada"
                             + "\nSeleccione una opcion: ");
                     char opm1 = leer.next().charAt(0);
-                    String nombre = leer.next();
-                    String apellido = leer.next();
-                    int edad = leer.nextInt();
-                    int sal = leer.nextInt();
+                    String nombre;
+                    String apellido;
+                    int edad;
+                    int sal;
                     
                     switch(opm1){
                         case 'a'://jugador
@@ -123,12 +123,12 @@ public class Lab3_SergioAlessandro {
                             switch(o){
                                 case 1://base
                                     System.out.println("Cual es el nombre del jugador: ");
-                                    nombre = leer.next();
+                                    nombre = leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
-                                    apellido = leer.next();
+                                    apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
                                     int numc = leer.nextInt();
-                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    System.out.println("Cuantos años de experiencia tiene el jugador: ");
                                     edad = leer.nextInt();
                                     System.out.println("de cuanto es el salario del jugador");
                                     sal = leer.nextInt();
@@ -146,16 +146,16 @@ public class Lab3_SergioAlessandro {
                                     int pases = leer.nextInt();
                                     System.out.println("Cuanto de posteo tiene: ");
                                     int posteo = leer.nextInt();
-                                    libresj.add(new Base(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    libresj.add(new Base(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, edad, sal));
                                     break;
                                 case 2://escolta
                                     System.out.println("Cual es el nombre del jugador: ");
-                                    nombre = leer.next();
+                                    nombre = leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
-                                    apellido = leer.next();
+                                    apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
                                     numc = leer.nextInt();
-                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    System.out.println("Cuantos años de experiencia tiene el jugador: ");
                                     edad = leer.nextInt();
                                     System.out.println("de cuanto es el salario del jugador");
                                     sal = leer.nextInt();
@@ -173,16 +173,16 @@ public class Lab3_SergioAlessandro {
                                     pases = leer.nextInt();
                                     System.out.println("Cuanto de posteo tiene: ");
                                     posteo = leer.nextInt();
-                                    libresj.add(new Escolta(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    libresj.add(new Escolta(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, edad, sal));
                                     break;
                                 case 3://alero
                                     System.out.println("Cual es el nombre del jugador: ");
-                                    nombre = leer.next();
+                                    nombre = leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
-                                    apellido = leer.next();
+                                    apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
                                     numc = leer.nextInt();
-                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    System.out.println("Cuantos años de experiencia tiene el jugador: ");
                                     edad = leer.nextInt();
                                     System.out.println("de cuanto es el salario del jugador");
                                     sal = leer.nextInt();
@@ -200,16 +200,16 @@ public class Lab3_SergioAlessandro {
                                     pases = leer.nextInt();
                                     System.out.println("Cuanto de posteo tiene: ");
                                     posteo = leer.nextInt();
-                                    libresj.add(new Alero(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    libresj.add(new Alero(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, edad, sal));
                                     break;
                                 case 4://pivot
                                     System.out.println("Cual es el nombre del jugador: ");
-                                    nombre = leer.next();
+                                    nombre = leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
-                                    apellido = leer.next();
+                                    apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
                                     numc = leer.nextInt();
-                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    System.out.println("Cuantos años de experiencia tiene el jugador: ");
                                     edad = leer.nextInt();
                                     System.out.println("de cuanto es el salario del jugador");
                                     sal = leer.nextInt();
@@ -227,7 +227,7 @@ public class Lab3_SergioAlessandro {
                                     pases = leer.nextInt();
                                     System.out.println("Cuanto de posteo tiene: ");
                                     posteo = leer.nextInt();
-                                    libresj.add(new Pivot(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    libresj.add(new Pivot(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, edad, sal));
                                     break;
                                 case 5://centro
                                     System.out.println("Cual es el nombre del jugador: ");
@@ -236,7 +236,7 @@ public class Lab3_SergioAlessandro {
                                     apellido = leer.next();
                                     System.out.println("Que numero de camisa utilizara: ");
                                     numc = leer.nextInt();
-                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    System.out.println("Cuantos años de experiencia tiene el jugador: ");
                                     edad = leer.nextInt();
                                     System.out.println("de cuanto es el salario del jugador");
                                     sal = leer.nextInt();
@@ -254,48 +254,100 @@ public class Lab3_SergioAlessandro {
                                     pases = leer.nextInt();
                                     System.out.println("Cuanto de posteo tiene: ");
                                     posteo = leer.nextInt();
-                                    libresj.add(new Centro(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    libresj.add(new Centro(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, edad, sal));
                                     break;
                             }
                             break;
                         case 'b'://Medico
                             System.out.println("De que posicion juega su jugador:"
-                                    + "\n1) Base"
-                                    + "\n2) Escolta"
-                                    + "\n3) Alero"
-                                    + "\n4) Pivot"
-                                    + "\n5) Centro"
+                                    + "\n1) Medico General"
+                                    + "\n2) Cirujano"
+                                    + "\n3) Terapeuta"
                                     + "Elija una opcion: ");
                             o = leer.nextInt();
                             switch(o){
-                                
+                                case 1:
+                                    System.out.println("Cual es el nombre del Medico: ");
+                                    nombre = leer.nextLine();
+                                    System.out.println("Cual es el apellido del Medico: ");
+                                    apellido = leer.nextLine();
+                                    System.out.println("Cuantos años de experiencia tiene el Medico: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del Medico");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuantas enfermedades ha curado: ");
+                                    int dr = leer.nextInt();
+                                    System.out.println("En que colegio se graduo: ");
+                                    String col = leer.nextLine();
+                                    medicos.add(new MedicoGeneral(dr, col, nombre, apellido, edad, sal));
+                                    break;
+                                case 2:
+                                    System.out.println("Cual es el nombre del Medico: ");
+                                    nombre = leer.nextLine();
+                                    System.out.println("Cual es el apellido del Medico: ");
+                                    apellido = leer.nextLine();
+                                    System.out.println("Cuantos años de experiencia tiene el Medico: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del Medico");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuantas enfermedades ha curado: ");
+                                    dr = leer.nextInt();
+                                    System.out.println("En que colegio se graduo: ");
+                                    col = leer.nextLine();
+                                    medicos.add(new Cirujano(dr, col, nombre, apellido, edad, sal));
+                                    break;
+                                case 3:
+                                    System.out.println("Cual es el nombre del Medico: ");
+                                    nombre = leer.nextLine();
+                                    System.out.println("Cual es el apellido del Medico: ");
+                                    apellido = leer.nextLine();
+                                    System.out.println("Cuantos años de experiencia tiene el Medico: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del Medico");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuantas enfermedades ha curado: ");
+                                    dr = leer.nextInt();
+                                    System.out.println("En que colegio se graduo: ");
+                                    col = leer.nextLine();
+                                    medicos.add(new Terapeuta(dr, col, nombre, apellido, edad, sal));
+                                    break;
                             }
-                            System.out.println("Cual es el nombre del Medico: ");
-                            nombre = leer.next();
-                            System.out.println("Cual es el apellido del Medico: ");
-                            apellido = leer.next();
-                            System.out.println("Cuantos años tiene el Medico: ");
-                            edad = leer.nextInt();
-                            System.out.println("de cuanto es el salario del Medico");
-                            sal = leer.nextInt();
+                            
                             break;
                         case 'c'://Dueño
                             System.out.println("Cual es el nombre del Dueño: ");
-                            nombre = leer.next();
-                            System.out.println("Cual es el apellido del Dueño: ");
-                            apellido = leer.next();
-                            System.out.println("Cuantos años tiene el Dueño: ");
+                            nombre = leer.nextLine();
+                            System.out.println("Cual es el apellido de " +": ");
+                            apellido = leer.nextLine();
+                            System.out.println("Cuantos años de experiencia tiene  " +": ");
                             edad = leer.nextInt();
-                            System.out.println("de cuanto es el salario del Dueño");
+                            System.out.println("de cuanto es el salario de " +": ");
                             sal = leer.nextInt();
+                            System.out.println("Cual es el net worth de " +": ");
+                            int worth = leer.nextInt();
+                            System.out.println("De que ciudad es " +": ");
+                            dueños.add(new Dueño(worth, nombre, nombre, apellido, edad, sal));
                             break;
                         case 'd'://Entrenador
+                            
                             System.out.println("Cual es el nombre del Entrenador: ");
-                            nombre = leer.next();
+                            nombre = leer.nextLine();
                             System.out.println("Cual es el apellido del Entrenador: ");
-                            apellido = leer.next();
-                            System.out.println("Cuantos años tiene el Entrenador: ");
+                            apellido = leer.nextLine();
+                            System.out.println("Cuantos años de experiencia tiene el Entrenador: ");
                             edad = leer.nextInt();
+                            System.out.println("El entrenador fue jugador? aprete (1) para si y (2) para no: ");
+                            int b = leer.nextInt();
+                            boolean jugad;
+                            if(b == 1){
+                                jugad = true;
+                            }else
+                                jugad = false;
+                            for (int i = 0; i < jugadas.size(); i++) {
+                                System.out.println(jugadas.get(i).getNombre());
+                            }
+                            System.out.println("escoja el numero de la jugada favorita de "+nombre+" :");
+                            
                             break;
                         case 'e'://Equipo
                             
@@ -309,7 +361,24 @@ public class Lab3_SergioAlessandro {
 
                     break;
                 case 3://Despedir
-
+                    for (int i = 0; i < equipos.size(); i++) {
+                        System.out.println(equipos.get(i).getNombre());
+                    }
+                    System.out.println("Escoja el numero del equipo que quiere despedir a alguien: ");
+                    int eq = leer.nextInt();
+                    while (eq < 0 || eq > equipos.size()) {
+                        System.out.println("Error, Escoja el numero del equipo que quiere despedir a alguien: ");
+                        eq = leer.nextInt();
+                    }
+                    System.out.println("a quien desea despedir: "
+                            + "\n1) Jugador"
+                            + "\n2) Entrenador"
+                            + "\nELija un numero: ");
+                    int sel = leer.nextInt();
+                    while (sel == 1 || sel == 2) {
+                        System.out.println("Error, Escoja el numero del equipo que quiere despedir a alguien: ");
+                        eq = leer.nextInt();
+                    }
                     break;
                 case 4://Modificar
 
