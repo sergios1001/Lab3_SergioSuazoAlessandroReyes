@@ -70,7 +70,7 @@ public class Lab3_SergioAlessandro {
         medicos.add(new Cirujano(100, "Unah", "Ian", "Barrientos", 23, 100000));
         medicos.add(new MedicoGeneral(100, "Unah", "Ian", "Barrientos", 23, 100000));
         medicos.add(new Terapeuta(100, "Unah", "Ian", "Barrientos", 23, 100000));
-        equipos.add(new Equipo("Linces", dueños.get(0)));
+        equipos.add(new Equipo("Linces","2000", dueños.get(0), 200));
         equipos.get(0).getMedicos().add(medicos.get(1));
         equipos.get(0).getMedicos().add(medicos.get(0));
         equipos.get(0).getMedicos().add(medicos.get(2));
@@ -105,6 +105,11 @@ public class Lab3_SergioAlessandro {
                             + "\nf) jugada"
                             + "\nSeleccione una opcion: ");
                     char opm1 = leer.next().charAt(0);
+                    String nombre = leer.next();
+                    String apellido = leer.next();
+                    int edad = leer.nextInt();
+                    int sal = leer.nextInt();
+                    
                     switch(opm1){
                         case 'a'://jugador
                             System.out.println("De que posicion juega su jugador:"
@@ -114,33 +119,157 @@ public class Lab3_SergioAlessandro {
                                     + "\n4) Pivot"
                                     + "\n5) Centro"
                                     + "Elija una opcion: ");
-                            
-                                    
-                            System.out.println("Cual es el nombre del jugador: ");
-                            String nombre = leer.next();
-                            System.out.println("Cual es el apellido del jugador: ");
-                            String apellido = leer.next();
-                            System.out.println("Cuantos años tiene el jugador: ");
-                            int edad = leer.nextInt();
-                            System.out.println("de cuanto es el salario del jugador");
-                            int sal = leer.nextInt();
-                            System.out.println("Cuanto de tiro de 3 tiene: ");
-                            int tir3 = leer.nextInt();
-                            System.out.println("Cuanto de defensa tiene: ");
-                            int def = leer.nextInt();
-                            System.out.println("Cuanto de media tiene: ");
-                            int media = leer.nextInt();
-                            System.out.println("Cuanto de rebote tiene: ");
-                            int rebote = leer.nextInt();
-                            System.out.println("Cuanto de bandeja tiene: ");
-                            int bandeja = leer.nextInt();
-                            System.out.println("Cuanto de pases tiene: ");
-                            int pases = leer.nextInt();
-                            System.out.println("Cuanto de posteo tiene: ");
-                            int posteo = leer.nextInt();
-                            
+                            int o = leer.nextInt();
+                            switch(o){
+                                case 1://base
+                                    System.out.println("Cual es el nombre del jugador: ");
+                                    nombre = leer.next();
+                                    System.out.println("Cual es el apellido del jugador: ");
+                                    apellido = leer.next();
+                                    System.out.println("Que numero de camisa utilizara: ");
+                                    int numc = leer.nextInt();
+                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del jugador");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuanto de tiro de 3 tiene: ");
+                                    int tir3 = leer.nextInt();
+                                    System.out.println("Cuanto de defensa tiene: ");
+                                    int def = leer.nextInt();
+                                    System.out.println("Cuanto de media tiene: ");
+                                    int media = leer.nextInt();
+                                    System.out.println("Cuanto de rebote tiene: ");
+                                    int rebote = leer.nextInt();
+                                    System.out.println("Cuanto de bandeja tiene: ");
+                                    int bandeja = leer.nextInt();
+                                    System.out.println("Cuanto de pases tiene: ");
+                                    int pases = leer.nextInt();
+                                    System.out.println("Cuanto de posteo tiene: ");
+                                    int posteo = leer.nextInt();
+                                    libresj.add(new Base(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    break;
+                                case 2://escolta
+                                    System.out.println("Cual es el nombre del jugador: ");
+                                    nombre = leer.next();
+                                    System.out.println("Cual es el apellido del jugador: ");
+                                    apellido = leer.next();
+                                    System.out.println("Que numero de camisa utilizara: ");
+                                    numc = leer.nextInt();
+                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del jugador");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuanto de tiro de 3 tiene: ");
+                                    tir3 = leer.nextInt();
+                                    System.out.println("Cuanto de defensa tiene: ");
+                                    def = leer.nextInt();
+                                    System.out.println("Cuanto de media tiene: ");
+                                    media = leer.nextInt();
+                                    System.out.println("Cuanto de rebote tiene: ");
+                                    rebote = leer.nextInt();
+                                    System.out.println("Cuanto de bandeja tiene: ");
+                                    bandeja = leer.nextInt();
+                                    System.out.println("Cuanto de pases tiene: ");
+                                    pases = leer.nextInt();
+                                    System.out.println("Cuanto de posteo tiene: ");
+                                    posteo = leer.nextInt();
+                                    libresj.add(new Escolta(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    break;
+                                case 3://alero
+                                    System.out.println("Cual es el nombre del jugador: ");
+                                    nombre = leer.next();
+                                    System.out.println("Cual es el apellido del jugador: ");
+                                    apellido = leer.next();
+                                    System.out.println("Que numero de camisa utilizara: ");
+                                    numc = leer.nextInt();
+                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del jugador");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuanto de tiro de 3 tiene: ");
+                                    tir3 = leer.nextInt();
+                                    System.out.println("Cuanto de defensa tiene: ");
+                                    def = leer.nextInt();
+                                    System.out.println("Cuanto de media tiene: ");
+                                    media = leer.nextInt();
+                                    System.out.println("Cuanto de rebote tiene: ");
+                                    rebote = leer.nextInt();
+                                    System.out.println("Cuanto de bandeja tiene: ");
+                                    bandeja = leer.nextInt();
+                                    System.out.println("Cuanto de pases tiene: ");
+                                    pases = leer.nextInt();
+                                    System.out.println("Cuanto de posteo tiene: ");
+                                    posteo = leer.nextInt();
+                                    libresj.add(new Alero(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    break;
+                                case 4://pivot
+                                    System.out.println("Cual es el nombre del jugador: ");
+                                    nombre = leer.next();
+                                    System.out.println("Cual es el apellido del jugador: ");
+                                    apellido = leer.next();
+                                    System.out.println("Que numero de camisa utilizara: ");
+                                    numc = leer.nextInt();
+                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del jugador");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuanto de tiro de 3 tiene: ");
+                                    tir3 = leer.nextInt();
+                                    System.out.println("Cuanto de defensa tiene: ");
+                                    def = leer.nextInt();
+                                    System.out.println("Cuanto de media tiene: ");
+                                    media = leer.nextInt();
+                                    System.out.println("Cuanto de rebote tiene: ");
+                                    rebote = leer.nextInt();
+                                    System.out.println("Cuanto de bandeja tiene: ");
+                                    bandeja = leer.nextInt();
+                                    System.out.println("Cuanto de pases tiene: ");
+                                    pases = leer.nextInt();
+                                    System.out.println("Cuanto de posteo tiene: ");
+                                    posteo = leer.nextInt();
+                                    libresj.add(new Pivot(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    break;
+                                case 5://centro
+                                    System.out.println("Cual es el nombre del jugador: ");
+                                    nombre = leer.next();
+                                    System.out.println("Cual es el apellido del jugador: ");
+                                    apellido = leer.next();
+                                    System.out.println("Que numero de camisa utilizara: ");
+                                    numc = leer.nextInt();
+                                    System.out.println("Cuantos años tiene el jugador: ");
+                                    edad = leer.nextInt();
+                                    System.out.println("de cuanto es el salario del jugador");
+                                    sal = leer.nextInt();
+                                    System.out.println("Cuanto de tiro de 3 tiene: ");
+                                    tir3 = leer.nextInt();
+                                    System.out.println("Cuanto de defensa tiene: ");
+                                    def = leer.nextInt();
+                                    System.out.println("Cuanto de media tiene: ");
+                                    media = leer.nextInt();
+                                    System.out.println("Cuanto de rebote tiene: ");
+                                    rebote = leer.nextInt();
+                                    System.out.println("Cuanto de bandeja tiene: ");
+                                    bandeja = leer.nextInt();
+                                    System.out.println("Cuanto de pases tiene: ");
+                                    pases = leer.nextInt();
+                                    System.out.println("Cuanto de posteo tiene: ");
+                                    posteo = leer.nextInt();
+                                    libresj.add(new Centro(numc, tir3, def, media, rebote, bandeja, pases, posteo, nombre, apellido, pases, sal));
+                                    break;
+                            }
                             break;
                         case 'b'://Medico
+                            System.out.println("De que posicion juega su jugador:"
+                                    + "\n1) Base"
+                                    + "\n2) Escolta"
+                                    + "\n3) Alero"
+                                    + "\n4) Pivot"
+                                    + "\n5) Centro"
+                                    + "Elija una opcion: ");
+                            o = leer.nextInt();
+                            switch(o){
+                                
+                            }
                             System.out.println("Cual es el nombre del Medico: ");
                             nombre = leer.next();
                             System.out.println("Cual es el apellido del Medico: ");
