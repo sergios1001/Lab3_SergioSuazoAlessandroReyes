@@ -3,7 +3,6 @@ package lab3_sergioalessandro;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 
 
@@ -28,8 +27,11 @@ import javax.swing.JOptionPane;
 
 
 public class Lab3_SergioAlessandro {
+    
     public static Scanner leer = new Scanner(System.in);
     public static Random random = new Random();
+    ArrayList<Persona> alibres = new ArrayList();
+    
     
     
     
@@ -48,6 +50,46 @@ public class Lab3_SergioAlessandro {
     
     
     public static void main(String[] args) {
+        char resp = 's';
+        while (resp == 's') {
+            System.out.println("Que opcion quiere utilizar:"
+                    + "\n1) Aregar"
+                    + "\n2) Despedir"
+                    + "\n3) Modificar"
+                    + "\n4) Simular entreno"
+                    + "\n5) Simular jugar"
+                    + "\n6) Salir"
+                    + "\nSeleccione uno: ");
+            int op = leer.nextInt();
+            switch (op) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+                    resp = 'n';
+                    break;
+            }
+        }
+
+        
+        
+        
+        
+        
+        
+        
         
     }
     
