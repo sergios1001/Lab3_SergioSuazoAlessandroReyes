@@ -10,15 +10,24 @@ package lab3_sergioalessandro;
  * @author Sergio
  */
 public class Jugadas {
-    private String descripcion;
+    private String nombre, descripcion;
     private int efectividad;
 
     public Jugadas() {
     }
 
-    public Jugadas(String descripcion, int efectividad) {
+    public Jugadas(String nombre, String descripcion, int efectividad) {
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.efectividad = efectividad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
@@ -39,7 +48,7 @@ public class Jugadas {
 
     @Override
     public String toString() {
-        return "Jugadas{" + "descripcion=" + descripcion + ", efectividad=" + efectividad + '}';
+        return "Jugadas{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", efectividad=" + efectividad + '}';
     }
     
 }
