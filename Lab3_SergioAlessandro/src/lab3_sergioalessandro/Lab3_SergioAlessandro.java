@@ -31,13 +31,11 @@ public class Lab3_SergioAlessandro {
     public static Scanner leer = new Scanner(System.in);
     public static Random random = new Random();
     
-    ArrayList<Jugador> jugadores = new ArrayList();
     ArrayList<Jugador> libresj = new ArrayList();
-    ArrayList<Entrenador> entrenadores = new ArrayList();
     ArrayList<Entrenador> librese = new ArrayList();
     ArrayList<Medico> medicos = new ArrayList();
     ArrayList<Equipo> equipos = new ArrayList();
-    ArrayList<Jugada> jugada = new ArrayList();
+    ArrayList<Jugadas> jugadas = new ArrayList();
     
     
     
@@ -56,6 +54,7 @@ public class Lab3_SergioAlessandro {
     
     
     public static void main(String[] args) {
+        jugadas.add(new Jugada())
         char resp = 's';
         while (resp == 's') {
             System.out.println("Que opcion quiere utilizar:"
@@ -82,43 +81,41 @@ public class Lab3_SergioAlessandro {
                     switch(opm1){
                         case 'a'://jugador
                             System.out.println("Cual es el nombre del jugador: ");
-                            
+                            String nombre = leer.next();
                             System.out.println("Cual es el apellido del jugador: ");
-                            
+                            String apellido = leer.next();
                             System.out.println("Cuantos años tiene el jugador: ");
-                            
+                            int edad = leer.nextInt();
                             System.out.println("de cuanto es el salario del jugador");
-                            
+                            int sal = leer.nextInt();
                             break;
                         case 'b'://Medico
                             System.out.println("Cual es el nombre del Medico: ");
-                            
+                            nombre = leer.next();
                             System.out.println("Cual es el apellido del Medico: ");
-                            
+                            apellido = leer.next();
                             System.out.println("Cuantos años tiene el Medico: ");
-                            
+                            edad = leer.nextInt();
                             System.out.println("de cuanto es el salario del Medico");
-                            
+                            sal = leer.nextInt();
                             break;
                         case 'c'://Dueño
                             System.out.println("Cual es el nombre del Dueño: ");
-                            
+                            nombre = leer.next();
                             System.out.println("Cual es el apellido del Dueño: ");
-                            
+                            apellido = leer.next();
                             System.out.println("Cuantos años tiene el Dueño: ");
-                            
+                            edad = leer.nextInt();
                             System.out.println("de cuanto es el salario del Dueño");
-                            
+                            sal = leer.nextInt();
                             break;
                         case 'd'://Entrenador
                             System.out.println("Cual es el nombre del Entrenador: ");
-                            
+                            nombre = leer.next();
                             System.out.println("Cual es el apellido del Entrenador: ");
-                            
+                            apellido = leer.next();
                             System.out.println("Cuantos años tiene el Entrenador: ");
-                            
-                            System.out.println("de cuanto es el salario del Entrenador");
-                            
+                            edad = leer.nextInt();
                             break;
                         case 'e'://Equipo
                             
