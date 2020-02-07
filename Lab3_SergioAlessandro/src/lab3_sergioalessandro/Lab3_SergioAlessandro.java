@@ -31,11 +31,11 @@ public class Lab3_SergioAlessandro {
     public static Scanner leer = new Scanner(System.in);
     public static Random random = new Random();
     
-    ArrayList<Jugador> libresj = new ArrayList();
-    ArrayList<Entrenador> librese = new ArrayList();
-    ArrayList<Medico> medicos = new ArrayList();
-    ArrayList<Equipo> equipos = new ArrayList();
-    ArrayList<Jugadas> jugadas = new ArrayList();
+    public static ArrayList<Jugador> libresj = new ArrayList();
+    public static ArrayList<Entrenador> librese = new ArrayList();
+    public static ArrayList<Medico> medicos = new ArrayList();
+    public static ArrayList<Equipo> equipos = new ArrayList();
+    public static ArrayList<Jugadas> jugadas = new ArrayList();
     
     
     
@@ -54,7 +54,7 @@ public class Lab3_SergioAlessandro {
     
     
     public static void main(String[] args) {
-        jugadas.add(new Jugada())
+        jugadas.add(new Jugadas());
         char resp = 's';
         while (resp == 's') {
             System.out.println("Que opcion quiere utilizar:"
