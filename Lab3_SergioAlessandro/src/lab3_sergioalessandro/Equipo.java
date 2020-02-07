@@ -12,8 +12,10 @@ import java.util.ArrayList;
  * @author Sergio
  */
 public class Equipo {
-    private String nombre;
+    private String nombre,fundacion;
     private Dueño dueño;
+    private int campeonatos;
+    
     private ArrayList<Jugador> jugadores =new ArrayList<>();
     private ArrayList<Medico> medicos = new ArrayList<>();
     private ArrayList<Entrenador> entrenadores = new ArrayList<>();
@@ -22,10 +24,29 @@ public class Equipo {
     public Equipo() {
     }
 
-    public Equipo(String nombre, Dueño dueño) {
+    public Equipo(String nombre, String fundacion, Dueño dueño, int campeonatos) {
         this.nombre = nombre;
+        this.fundacion = fundacion;
         this.dueño = dueño;
+        this.campeonatos = campeonatos;
     }
+
+    public String getFundacion() {
+        return fundacion;
+    }
+
+    public void setFundacion(String fundacion) {
+        this.fundacion = fundacion;
+    }
+
+    public int getCampeonatos() {
+        return campeonatos;
+    }
+
+    public void setCampeonatos(int campeonatos) {
+        this.campeonatos = campeonatos;
+    }
+
 
     public String getNombre() {
         return nombre;

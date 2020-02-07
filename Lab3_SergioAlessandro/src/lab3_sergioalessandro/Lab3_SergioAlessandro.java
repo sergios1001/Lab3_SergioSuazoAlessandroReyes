@@ -297,7 +297,24 @@ public class Lab3_SergioAlessandro {
     
     
     
-    
+public void Jugar(Equipo a)
+{
+    System.out.println("Inicia el juego");
+    int i,j;
+    i=1+random.nextInt(100);
+    j=1+random.nextInt(100);
+    if(i<=40)
+    {
+       int x=random.nextInt(a.getJugadores().size());
+        System.out.println(a.getJugadores().get(x).getNombre()+" Se ha lesionado");
+        System.out.println("Seleccionde un Cirujano: ");
+        for (Medico a.get : libresj) {
+            
+        }
+        a.getMedicos().get
+    }
+    System.out.println("Termina el Juego");
+}
     
     
     
