@@ -59,16 +59,17 @@ public class Lab3_SergioAlessandro {
         char resp = 's';
         while (resp == 's') {
             System.out.println("Que opcion quiere utilizar:"
-                    + "\n1) Agregar"
-                    + "\n2) Despedir"
-                    + "\n3) Modificar"
-                    + "\n4) Simular entreno"
-                    + "\n5) Simular jugar"
-                    + "\n6) Salir"
+                    + "\n1) Crear"
+                    + "\n2) Agregar personal a un equipo"
+                    + "\n3) Despedir"
+                    + "\n4) Modificar"
+                    + "\n5) Simular entreno"
+                    + "\n6) Simular jugar"
+                    + "\n7) Salir"
                     + "\nSeleccione una opción(si pone una opcion no indicada, el programa termina): ");
             int op = leer.nextInt();
             switch (op) {
-                case 1://Agrear
+                case 1://Crear
                     System.out.println("Que desea crear: "
                             + "\na) Jugador"
                             + "\nb) Medico"
@@ -79,39 +80,49 @@ public class Lab3_SergioAlessandro {
                             + "\nSeleccione una opcion: ");
                     char opm1 = leer.next().charAt(0);
                     switch(opm1){
-                        case 'a':
+                        case 'a'://jugador
+                            System.out.println("Cual es el nombre del jugador: ");
+                            
+                            System.out.println("Cual es el apellido del jugador: ");
+                            
+                            System.out.println("Cuantos años tiene el jugador: ");
+                            
+                            System.out.println("de cuanto es el salario del jugador");
                             
                             break;
-                        case 'b':
+                        case 'b'://Medico
                             
                             break;
-                        case 'c':
+                        case 'c'://Dueño
                             
                             break;
-                        case 'd':
+                        case 'd'://Entrenador
                             
                             break;
-                        case 'e':
+                        case 'e'://Equipo
                             
                             break;
-                        case 'f':
+                        case 'f'://Jugada
                             
                             break;
                     }
                     break;
-                case 2://despedir
+                case 2://Agregar personal a un equipo
 
                     break;
-                case 3://modificar
+                case 3://Despedir
 
                     break;
-                case 4://simular entreno
+                case 4://Modificar
 
                     break;
-                case 5://simular jugar
+                case 5://Simular entreno
 
                     break;
-                case 6://salir
+                case 6://Simular jugar
+                    
+                    break;
+                case 7://salir
                     resp = 'n';
                     break;
                 default:
