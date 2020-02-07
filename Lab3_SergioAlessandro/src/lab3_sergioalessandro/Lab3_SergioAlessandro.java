@@ -315,10 +315,72 @@ public void Jugar(Equipo a)
        int x=random.nextInt(a.getJugadores().size());
         System.out.println(a.getJugadores().get(x).getNombre()+" Se ha lesionado");
         System.out.println("Seleccionde un Cirujano: ");
-        for (Medico a.get : libresj) {
-            
+        int pos=0;
+        for (Medico m: a.getMedicos()) {
+            if(m instanceof Cirujano)
+            {
+                System.out.println(pos+" "+m.getNombre());
+                pos++;
+            }
         }
-        a.getMedicos().get
+        int n=leer.nextInt();
+        pos=0;
+        for (Medico m: a.getMedicos()) {
+            if(m instanceof Cirujano)
+            {
+                if(pos==n)
+                {
+                    ((Cirujano) m).setCirugias(((Cirujano) m).getCirugias()+1);
+                }
+                pos++;
+            }
+        }
+        System.out.println("Seleccionde un Terapeuta: ");
+        for (Medico m: a.getMedicos()) {
+            if(m instanceof Terapeuta)
+            {
+                System.out.println(pos+" "+m.getNombre());
+                pos++;
+            }
+        }
+        int l=leer.nextInt();
+        pos=0;
+        for (Medico m: a.getMedicos()) {
+            if(m instanceof Terapeuta)
+            {
+                if(pos==l)
+                {
+                    ((Terapeuta) m).setTerapias(((Terapeuta) m).getTerapias()+1);
+                }
+                pos++;
+            }
+        }
+    }
+    if(j<=30)
+    {
+        int x=random.nextInt(a.getJugadores().size());
+        System.out.println(a.getJugadores().get(x).getNombre()+" Se ha enfermado");
+        System.out.println("Seleccionde un Medico General: ");
+        int pos=0;
+        for (Medico m: a.getMedicos()) {
+            if(m instanceof MedicoGeneral)
+            {
+                System.out.println(pos+" "+m.getNombre());
+                pos++;
+            }
+        }
+        int n=leer.nextInt();
+        pos=0;
+        for (Medico m: a.getMedicos()) {
+            if(m instanceof MedicoGeneral)
+            {
+                if(pos==n)
+                {
+                    ((MedicoGeneral) m).setEnfermedades(((MedicoGeneral) m).getEnfermedades()+1);
+                }
+                pos++;
+            }
+        }
     }
     System.out.println("Termina el Juego");
 }
