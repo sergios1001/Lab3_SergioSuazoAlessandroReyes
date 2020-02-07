@@ -387,7 +387,7 @@ public class Lab3_SergioAlessandro {
 
                     break;
                 case 6://Simular jugar
-                    
+
                     break;
                 case 7://salir
                     resp = 'n';
@@ -546,7 +546,7 @@ public class Lab3_SergioAlessandro {
     
     
     
-public void Jugar(Equipo a)
+public static void Jugar(Equipo a)
 {
     System.out.println("Inicia el juego");
     int i,j;
@@ -577,6 +577,7 @@ public void Jugar(Equipo a)
                 pos++;
             }
         }
+        pos=0;
         System.out.println("Seleccionde un Terapeuta: ");
         for (Medico m: a.getMedicos()) {
             if(m instanceof Terapeuta)
@@ -627,7 +628,67 @@ public void Jugar(Equipo a)
     System.out.println("Termina el Juego");
 }
     
+public static void Entrenar(Equipo a)
+{
+    int pos=0;
+        for (Entrenador m: a.getEntrenadores()) {
+            if(m instanceof PreparadorFisico)
+            {
+                System.out.println(pos+" "+m.getNombre());
+                pos++;
+            }
+        }
+        System.out.println("Seleccione un preparador Fisico: ");
+        int n=leer.nextInt();
+    Jugadas x,y,z;
+    for (int i = 0; i < a.getJugadas().size(); i++) {
+        System.out.println(i+" "+a.getJugadas().get(i).getNombre());
+    }
+    System.out.print("Seleccione la primera jugada: ");
+    int cont=leer.nextInt();
+    x=a.getJugadas().get(cont);
+    for (int i = 0; i < a.getJugadas().size(); i++) {
+        System.out.println(i+" "+a.getJugadas().get(i).getNombre());
+    }
+    System.out.print("Seleccione la segunda jugada: ");
+    cont=leer.nextInt();
+    y=a.getJugadas().get(cont);
+    for (int i = 0; i < a.getJugadas().size(); i++) {
+        System.out.println(i+" "+a.getJugadas().get(i).getNombre());
+    }
+    System.out.print("Seleccione la tercera jugada: ");
+    cont=leer.nextInt();
+    z=a.getJugadas().get(cont);
+    int p1,p2,p3;
+    p1=1+random.nextInt(100);
+    p2=1+random.nextInt(100);
+    p3=1+random.nextInt(100);
     
+    if(p1>x.getEfectividad())
+    {
+        System.out.println("Se completo la primera jugada con exito");
+    }
+    else
+    {
+        System.out.println("No se completo la primera jugada");
+    }
+    if(p2>x.getEfectividad())
+    {
+        System.out.println("Se completo la segunda jugada con exito");
+    }
+    else
+    {
+        System.out.println("No se completo la segunda jugada");
+    }
+    if(p3>x.getEfectividad())
+    {
+        System.out.println("Se completo la tercera jugada con exito");
+    }
+    else
+    {
+        System.out.println("No se completo la tercera jugada");
+    }
+}
     
     
     
