@@ -70,6 +70,9 @@ public class Lab3_SergioAlessandro {
         medicos.add(new Cirujano(100, "Unah", "Ian", "Barrientos", 23, 100000));
         medicos.add(new MedicoGeneral(100, "Unah", "Maria", "Aguilar", 23, 100000));
         medicos.add(new Terapeuta(100, "Unah", "Alejandra", "Lopez", 23, 100000));
+        librese.add(new EntrenadorPrincipal(true, jugadas.get(0), "Alessandro", "Reyes", 23));
+        librese.add(new Asistente(true, jugadas.get(0), "Giovanni", "Reyes", 23));
+        librese.add(new PreparadorFisico(true, jugadas.get(0), "Alessandro", "Trimarchi", 23, 2000000));
         equipos.add(new Equipo("Linces","2000", dueños.get(0), 200));
         equipos.get(0).getMedicos().add(medicos.get(1));
         equipos.get(0).getMedicos().add(medicos.get(0));
@@ -79,6 +82,9 @@ public class Lab3_SergioAlessandro {
         equipos.get(0).getJugadores().add(libresj.get(2));
         equipos.get(0).getJugadores().add(libresj.get(3));
         equipos.get(0).getJugadores().add(libresj.get(4));
+        equipos.get(0).getEntrenadores().add(librese.get(0));
+        equipos.get(0).getEntrenadores().add(librese.get(1));
+        equipos.get(0).getEntrenadores().add(librese.get(2));
         equipos.get(0).getJugadas().add(jugadas.get(0));
         equipos.get(0).getJugadas().add(jugadas.get(1));
         equipos.get(0).getJugadas().add(jugadas.get(2));
@@ -344,14 +350,14 @@ public class Lab3_SergioAlessandro {
                             }else
                                 jugad = false;
                             for (int i = 0; i < jugadas.size(); i++) {
-                                System.out.println(jugadas.get(i).getNombre());
+                                System.out.println(i+" "+jugadas.get(i).getNombre());
                             }
                             System.out.println("escoja el numero de la jugada favorita de "+nombre+" :");
                             
                             break;
                         case 'e'://Equipo
                             for (int i = 0; i < dueños.size(); i++) {
-                                System.out.println(dueños.get(i).getNombre());
+                                System.out.println(i+ " "+dueños.get(i).getNombre());
                             }
                             System.out.println("Elija el numero del dueño que es el dueño del equipo: ");
                             int elej = leer.nextInt();
@@ -382,7 +388,7 @@ public class Lab3_SergioAlessandro {
                     switch(opcion){
                         case 1://entradores
                             for (int i = 0; i < equipos.size(); i++) {
-                                System.out.println(equipos.get(i).getNombre());
+                                System.out.println(i+ " "+equipos.get(i).getNombre());
                             }
                             System.out.println("Elija el numero del equipo que desea agregarle un entrenador: ");
                             int oo = leer.nextInt();
@@ -408,29 +414,135 @@ public class Lab3_SergioAlessandro {
                                         }
                                     }
                                     for (int i = 0; i < librese.size(); i++) {
-                                        if(equipos.get(oo).getEntrenadores().get(i) instanceof EntrenadorPrincipal)
+                                        if(librese.get(i) instanceof EntrenadorPrincipal)
                                             System.out.println(i+" "+librese.get(i).getNombre());
                                     }
                                     System.out.println("Elija el numero del entrenador que quiere agregar: ");
+                                    int entre = leer.nextInt();
+                                    equipos.get(oo).getEntrenadores().add(librese.get(entre));
+                                    librese.remove(entre);
+                                    System.out.println("Se ha comprado con exito al entrenador.");
+                                }else if( e == 2){
+                                    for (int i = 0; i < equipos.get(oo).getEntrenadores().size(); i++) {
+                                        if(equipos.get(oo).getEntrenadores().get(i) instanceof Asistente){
+                                            System.out.println("El equipo ya tiene un Asistente.");
+                                            break;
+                                        }
+                                    }
+                                    for (int i = 0; i < librese.size(); i++) {
+                                        if(librese.get(i) instanceof Asistente)
+                                            System.out.println(i+" "+librese.get(i).getNombre());
+                                    }
+                                    System.out.println("Elija el numero del asistente que quiere agregar: ");
+                                    int entre = leer.nextInt();
+                                    equipos.get(oo).getEntrenadores().add(librese.get(entre));
+                                    librese.remove(entre);
+                                    System.out.println("Se ha comprado con exito al entrenador.");
+                                }else if(e == 3){
+                                    for (int i = 0; i < equipos.get(oo).getEntrenadores().size(); i++) {
+                                        if(equipos.get(oo).getEntrenadores().get(i) instanceof PreparadorFisico){
+                                            System.out.println("El equipo ya tiene un PreparadorFisico.");
+                                            break;
+                                        }
+                                    }
+                                    for (int i = 0; i < librese.size(); i++) {
+                                        if(librese.get(i) instanceof PreparadorFisico)
+                                            System.out.println(i+" "+librese.get(i).getNombre());
+                                    }
+                                    System.out.println("Elija el numero del preparador fisico que quiere agregar: ");
+                                    int entre = leer.nextInt();
+                                    equipos.get(oo).getEntrenadores().add(librese.get(entre));
+                                    librese.remove(entre);
+                                    System.out.println("Se ha comprado con exito al entrenador.");
                                 }
                             }
                             break;
                         case 2://jugadores
-                            
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+ " "+equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el numero del equipo que desea agregarle un jugador: ");
+                            oo = leer.nextInt();
+                            while (oo < 0 || oo >= equipos.size()) {
+                                System.out.println("Elija el numero del equipo que desea agregarle un jugador: ");
+                                oo = leer.nextInt();
+                            }
+                            if(equipos.get(oo).getJugadores().size() == 13){
+                                break;
+                            }else{
+                                for (int i = 0; i < libresj.size(); i++) {
+                                    System.out.println(i+" "+libresj.get(i).getNombre());
+                                }
+                                System.out.println("Elija el numero del jugador que quiere elegir");
+                                int n = leer.nextInt();
+                                equipos.get(oo).getJugadores().add(libresj.get(n));
+                                libresj.remove(n);
+                                System.out.println("Jugador comprado con exito.");
+                            }
                             break;
                         case 3://medicos
-                            
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+ " "+equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el numero del equipo que desea agregarle un medico: ");
+                            oo = leer.nextInt();
+                            while (oo < 0 || oo >= equipos.size()) {
+                                System.out.println("Elija el numero del equipo que desea agregarle un medico: ");
+                                oo = leer.nextInt();
+                            }
+
+                            System.out.println("Que tipo de medico quiere agregar"
+                                    + "\n1) Medico general"
+                                    + "\n2) Cirujano"
+                                    + "\n3) Terapeuta"
+                                    + "\nElija el numero del que quiere agregar: ");
+                            e = leer.nextInt();
+                            if (e == 1) {
+                                for (int i = 0; i < medicos.size(); i++) {
+                                    if (medicos.get(i) instanceof MedicoGeneral) {
+                                        System.out.println(i + " " + medicos.get(i).getNombre());
+                                    }
+                                }
+                                System.out.println("Elija el numero del medico que quiere agregar: ");
+                                int entre = leer.nextInt();
+                                equipos.get(oo).getMedicos().add(medicos.get(entre));
+                                medicos.remove(entre);
+                                System.out.println("Se ha comprado con exito al medico.");
+                            } else if (e == 2) {
+                                for (int i = 0; i < medicos.size(); i++) {
+                                    if (medicos.get(i) instanceof Cirujano) {
+                                        System.out.println(i + " " + medicos.get(i).getNombre());
+                                    }
+                                }
+                                System.out.println("Elija el numero del medico que quiere agregar: ");
+                                int entre = leer.nextInt();
+                                equipos.get(oo).getMedicos().add(medicos.get(entre));
+                                medicos.remove(entre);
+                                System.out.println("Se ha comprado con exito al medico.");
+                            } else if (e == 3) {
+                                for (int i = 0; i < medicos.size(); i++) {
+                                    if (medicos.get(i) instanceof Terapeuta) {
+                                        System.out.println(i + " " + medicos.get(i).getNombre());
+                                    }
+                                }
+                                System.out.println("Elija el numero del medico que quiere agregar: ");
+                                int entre = leer.nextInt();
+                                equipos.get(oo).getMedicos().add(medicos.get(entre));
+                                medicos.remove(entre);
+                                System.out.println("Se ha comprado con exito al medico.");
+                            }
+
                             break;
                     }
                     break;
                 case 3://Despedir
                     for (int i = 0; i < equipos.size(); i++) {
-                        System.out.println(equipos.get(i).getNombre());
+                        System.out.println(i+ " "+equipos.get(i).getNombre());
                     }
-                    System.out.println("Escoja el numero del equipo que quiere despedir a alguien: ");
+                    System.out.println("Escoja el numero del equipo que quiere despedir : ");
                     int eq = leer.nextInt();
                     while (eq < 0 || eq >= equipos.size()) {
-                        System.out.println("Error, Escoja el numero del equipo que quiere despedir a alguien: ");
+                        System.out.println("Error, Escoja el numero del equipo que quiere despedir: ");
                         eq = leer.nextInt();
                     }
                     System.out.println("a quien desea despedir: "
@@ -448,7 +560,7 @@ public class Lab3_SergioAlessandro {
                     int desp;
                     if(sel == 1){
                         for (int i = 0; i < equipos.get(eq).getJugadores().size(); i++) {
-                            System.out.println(equipos.get(eq).getJugadores().get(i).getNombre());
+                            System.out.println(i+ " "+equipos.get(eq).getJugadores().get(i).getNombre());
                         }
                         System.out.println("Elija el numero del jugador que desea despedir: ");
                         desp = leer.nextInt();
