@@ -350,7 +350,22 @@ public class Lab3_SergioAlessandro {
                             
                             break;
                         case 'e'://Equipo
-                            
+                            for (int i = 0; i < dueños.size(); i++) {
+                                System.out.println(dueños.get(i).getNombre());
+                            }
+                            System.out.println("Elija el numero del dueño que es el dueño del equipo: ");
+                            int elej = leer.nextInt();
+                            while(elej < 0 || elej >= dueños.size()){
+                                System.out.println("ERROR, Elija el numero del dueño que es el dueño del equipo: ");
+                                elej = leer.nextInt();
+                            }
+                            System.out.println("Nombre del equipo: ");
+                            nombre = leer.nextLine();
+                            System.out.println("En que año se creo "+nombre+": ");
+                            String fund = leer.nextLine();
+                            System.out.println("Cuantos campeonatos tiene el equipo: ");
+                            int campeonatos = leer.nextInt();
+                            equipos.add(new Equipo(nombre, fund, dueños.get(elej), campeonatos));
                             break;
                         case 'f'://Jugada
                             
@@ -358,7 +373,55 @@ public class Lab3_SergioAlessandro {
                     }
                     break;
                 case 2://Agregar personal a un equipo
-
+                    System.out.println("Que desea agregar"
+                            + "\n1) Entrenadores"
+                            + "\n2) Jugadores"
+                            + "\n3) Medicos"
+                            + "\nElija un numero: ");
+                    int opcion = leer.nextInt();
+                    switch(opcion){
+                        case 1://entradores
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el numero del equipo que desea agregarle un entrenador: ");
+                            int oo = leer.nextInt();
+                            while (oo < 0 || oo >= equipos.size()) {
+                                System.out.println("Elija el numero del equipo que desea agregarle un entrenador: ");
+                                oo = leer.nextInt();
+                            }
+                            int e;
+                            if(equipos.get(oo).getEntrenadores().size() == 3){
+                                break;
+                            }else{
+                                System.out.println("Que tipo de entrenador quiere agregar"
+                                        + "\n1) entrenador principal"
+                                        + "\n2) asistente"
+                                        + "\n3) preparador fisico"
+                                        + "\nElija el numero del que quiere agregar: ");
+                                e = leer.nextInt();
+                                if(e == 1){
+                                    for (int i = 0; i < equipos.get(oo).getEntrenadores().size(); i++) {
+                                        if(equipos.get(oo).getEntrenadores().get(i) instanceof EntrenadorPrincipal){
+                                            System.out.println("El equipo ya tiene un entrenador principal.");
+                                            break;
+                                        }
+                                    }
+                                    for (int i = 0; i < librese.size(); i++) {
+                                        if(equipos.get(oo).getEntrenadores().get(i) instanceof EntrenadorPrincipal)
+                                            System.out.println(i+" "+librese.get(i).getNombre());
+                                    }
+                                    System.out.println("Elija el numero del entrenador que quiere agregar: ");
+                                }
+                            }
+                            break;
+                        case 2://jugadores
+                            
+                            break;
+                        case 3://medicos
+                            
+                            break;
+                    }
                     break;
                 case 3://Despedir
                     for (int i = 0; i < equipos.size(); i++) {
@@ -366,7 +429,7 @@ public class Lab3_SergioAlessandro {
                     }
                     System.out.println("Escoja el numero del equipo que quiere despedir a alguien: ");
                     int eq = leer.nextInt();
-                    while (eq < 0 || eq > equipos.size()) {
+                    while (eq < 0 || eq >= equipos.size()) {
                         System.out.println("Error, Escoja el numero del equipo que quiere despedir a alguien: ");
                         eq = leer.nextInt();
                     }
@@ -375,17 +438,47 @@ public class Lab3_SergioAlessandro {
                             + "\n2) Entrenador"
                             + "\nELija un numero: ");
                     int sel = leer.nextInt();
-                    while (sel == 1 || sel == 2) {
+                    while (sel != 1 || sel != 2) {
                         System.out.println("ERROR, a quien desea despedir: "
                             + "\n1) Jugador"
                             + "\n2) Entrenador"
                             + "\nELija un numero: ");
                         sel = leer.nextInt();
                     }
+                    int desp;
                     if(sel == 1){
                         for (int i = 0; i < equipos.get(eq).getJugadores().size(); i++) {
-                            
+                            System.out.println(equipos.get(eq).getJugadores().get(i).getNombre());
                         }
+                        System.out.println("Elija el numero del jugador que desea despedir: ");
+                        desp = leer.nextInt();
+                        while (desp < 0 || desp >= equipos.get(eq).getJugadores().size()) {
+                            System.out.println("ERROR, Elija el numero del jugador que desea despedir: ");
+                            desp = leer.nextInt();
+                        }
+                        libresj.add(equipos.get(eq).getJugadores().get(desp));
+                        equipos.get(eq).getJugadores().remove(desp);
+                        System.out.println("Jugador despedido con exito");
+                    }else if(sel == 2){
+                        desp = 0;
+                        int prom =1;
+                        for (int i = 0; i < equipos.get(eq).getEntrenadores().size(); i++) {
+                            if(equipos.get(eq).getEntrenadores().get(i) instanceof EntrenadorPrincipal)
+                                desp = i;
+                            if(equipos.get(eq).getEntrenadores().get(i) instanceof Asistente)
+                                prom = i;
+                        }
+                        librese.add(equipos.get(eq).getEntrenadores().get(desp));
+                        equipos.get(eq).getEntrenadores().remove(desp);
+                        librese.add(new EntrenadorPrincipal(equipos.get(eq).getEntrenadores().get(prom).isJugador(), 
+                            equipos.get(eq).getEntrenadores().get(prom).getFavorita(), 
+                            equipos.get(eq).getEntrenadores().get(prom).getNombre(), 
+                            equipos.get(eq).getEntrenadores().get(prom).getApellido(), 
+                            equipos.get(eq).getEntrenadores().get(prom).getAños()));
+                        equipos.get(eq).getEntrenadores().remove(prom);
+                        equipos.get(eq).getEntrenadores().add(librese.get(librese.size()-1));
+                        librese.remove(librese.size()-1);
+                        System.out.println("Entrenador despedido con exito. ");
                     }
                     break;
                 case 4://Modificar
