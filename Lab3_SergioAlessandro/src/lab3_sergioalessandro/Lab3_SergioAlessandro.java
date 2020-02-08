@@ -594,13 +594,413 @@ public class Lab3_SergioAlessandro {
                     }
                     break;
                 case 4://Modificar
-
+                    System.out.println("1-Equipo \n"
+                            + "2-Jugador \n"
+                            + "3-Entrenador \n"
+                            + "4-Medico \n"
+                            + "5-Dueño \n"
+                            + "Seleccione lo que desea modificar: ");
+                    int cont=leer.nextInt();
+                    switch(cont)
+                    {
+                        case 1:
+                        {
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+" "+equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el equipo que desea modificar: ");
+                            int n=leer.nextInt();
+                            char select;
+                            System.out.print("Desea modificar el nombre? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo nombre: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).setNombre(name);
+                            }
+                            System.out.print("Desea modificar el año de fundacion? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo año: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).setFundacion(name);
+                            }
+                            System.out.print("Desea modificar el numero de campeonatos? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo numero: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).setCampeonatos(name);
+                            }
+                            break;
+                        }
+                        case 2:
+                        {
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+" "+equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el equipo que desea modificar el jugador: ");
+                            int n=leer.nextInt();
+                            for (int i = 0; i < equipos.get(n).getJugadores().size(); i++) {
+                                System.out.println(i+" "+equipos.get(n).getJugadores().get(i));
+                            }
+                            System.out.println("Elija el jugador a modificar: ");
+                            int m=leer.nextInt();
+                            char select;
+                            System.out.print("Desea modificar el nombre? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo nombre: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getJugadores().get(m).setNombre(name);
+                            }
+                            System.out.print("Desea modificar el numero de camisa? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo numero: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setNumero(name);
+                            }
+                            
+                            System.out.print("Desea modificar el Apellido? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo Apellido: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getJugadores().get(m).setApellido(name);
+                            }
+                            
+                            System.out.print("Desea modificar los años como profesional? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Cantidad de años: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setAños(name);
+                            }
+                            
+                            System.out.print("Desea modificar el salario? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo salario: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setSalario(name);
+                            }
+                            
+                            System.out.print("Desea modificar el Tiro de 3? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo triple: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setTriple(name);
+                            }
+                            System.out.print("Desea modificar el Tiro medio? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo tiro medio: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setMedio(name);
+                            }
+                            System.out.print("Desea modificar el Defensa? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo Defensa: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setDefensa(name);
+                            }
+                            System.out.print("Desea modificar el Rebote? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo Rebote: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setRebote(name);
+                            }
+                            System.out.print("Desea modificar la Bandeja? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo bandeja: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setBandeja(name);
+                            }
+                            System.out.print("Desea modificar el Pase? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo pase: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setPases(name);
+                            }
+                            System.out.print("Desea modificar el Posteo? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo posteo: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getJugadores().get(m).setPosteo(name);
+                            }
+                            System.out.print("Desea modificar la Bandeja? (s/n): ");
+                            select=leer.next().charAt(0);
+                          break;
+                        }
+                        case 3:
+                        {
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+" "+equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el equipo que desea modificar el entrenador: ");
+                            int n=leer.nextInt();
+                            for (int i = 0; i < equipos.get(n).getEntrenadores().size(); i++) {
+                                System.out.println(i+" "+equipos.get(n).getEntrenadores().get(i));
+                            }
+                            System.out.println("Elija el entrenador a modificar: ");
+                            int m=leer.nextInt();
+                            char select;
+                            System.out.print("Desea modificar el nombre? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo nombre: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getEntrenadores().get(m).setNombre(name);
+                            }
+                            System.out.print("Desea modificar el Apellido? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo Apellido: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getEntrenadores().get(m).setApellido(name);
+                            }
+                            
+                            System.out.print("Desea modificar los años como profesional? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Cantidad de años: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getEntrenadores().get(m).setAños(name);
+                            }
+                            
+                           
+                            
+                            System.out.print("Desea modificar la jugada favorita? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo jugada favorita: ");
+                                for (int i = 0; i < jugadas.size(); i++) {
+                                    System.out.println(i+" "+jugadas.get(i).getNombre());
+                                }
+                                int h=leer.nextInt();
+                                Jugadas j=jugadas.get(h);
+                                
+                                equipos.get(n).getEntrenadores().get(m).setFavorita(j);
+                            }
+       
+                            break;
+                        }
+                        case 4:
+                        {
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+" "+equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el equipo que desea modificar el medico: ");
+                            int n=leer.nextInt();
+                            for (int i = 0; i < equipos.get(n).getMedicos().size(); i++) {
+                                System.out.println(i+" "+equipos.get(n).getMedicos().get(i));
+                            }
+                            System.out.println("Elija el medico a modificar: ");
+                            int m=leer.nextInt();
+                            char select;
+                            System.out.print("Desea modificar el nombre? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo nombre: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getMedicos().get(m).setNombre(name);
+                            }
+                            System.out.print("Desea modificar el Apellido? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo Apellido: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getMedicos().get(m).setApellido(name);
+                            }
+                            
+                            System.out.print("Desea modificar los años como profesional? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Cantidad de años: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getMedicos().get(m).setAños(name);
+                            }
+                            
+                            System.out.print("Desea modificar el salario? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo salario: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getMedicos().get(m).setSalario(name);
+                            }
+                            System.out.print("Desea modificar el Colegio? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo colegio: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getMedicos().get(m).setColegio(name);
+                            }
+                            break;
+                        }
+                        case 5:
+                        {
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+" "+equipos.get(i).getNombre());
+                            }
+                            System.out.println("Elija el equipo que desea modificar el dueño: ");
+                            int n=leer.nextInt();
+                            char select;
+                            System.out.print("Desea modificar el nombre? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo nombre: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getDueño().setNombre(name);
+                            }
+                            System.out.print("Desea modificar el Apellido? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Nuevo Apellido: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getDueño().setApellido(name);
+                            }
+                            
+                            System.out.print("Desea modificar los años como profesional? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Cantidad de años: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getDueño().setAños(name);
+                            }
+                            System.out.print("Desea modificar el Net Worth? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Net Worth: ");
+                                int name;
+                                name=leer.nextInt();
+                                equipos.get(n).getDueño().setWorth(name);
+                            }
+                            System.out.print("Desea modificar ciudad? (s/n): ");
+                            select=leer.next().charAt(0);
+                            if(select=='s')
+                            {
+                                System.out.print("Ciudad: ");
+                                String name;
+                                name=leer.next();
+                                equipos.get(n).getDueño().setCiudad(name);
+                            }
+                            break;
+                        }
+                    }
+                    
                     break;
                 case 5://Simular entreno
-
+                    for (int i = 0; i < equipos.size(); i++) {
+                        System.out.println(i+" "+equipos.get(i).getNombre());
+                    }
+                    System.out.println("Seleccione el equipo que va a entrenar: ");
+                    int pos=leer.nextInt();
+                    if(equipos.get(pos).getJugadores().size()<5)
+                    {
+                        System.out.println("No tiene los jugadores necesarios");
+                        break;
+                    }
+                    else if(equipos.get(pos).getEntrenadores().size()<3)
+                    {
+                        System.out.println("No tiene los entrenadores necesarios");
+                        break;
+                    }
+                    else if(equipos.get(pos).getMedicos().size()<3)
+                    {
+                        System.out.println("No tiene los Medicos necesarios");
+                        break;
+                    }
+                    else
+                    {
+                        Entrenar(equipos.get(pos));
+                    }
                     break;
                 case 6://Simular jugar
-
+                     for (int i = 0; i < equipos.size(); i++) {
+                        System.out.println(i+" "+equipos.get(i).getNombre());
+                    }
+                    System.out.println("Seleccione el equipo que va a entrenar: ");
+                    pos=leer.nextInt();
+                    if(equipos.get(pos).getJugadores().size()<5)
+                    {
+                        System.out.println("No tiene los jugadores necesarios");
+                        break;
+                    }
+                    else if(equipos.get(pos).getEntrenadores().size()<3)
+                    {
+                        System.out.println("No tiene los entrenadores necesarios");
+                        break;
+                    }
+                    else if(equipos.get(pos).getMedicos().size()<3)
+                    {
+                        System.out.println("No tiene los Medicos necesarios");
+                        break;
+                    }
+                    else
+                    {
+                        Jugar(equipos.get(pos));
+                    }
                     break;
                 case 7://salir
                     resp = 'n';
