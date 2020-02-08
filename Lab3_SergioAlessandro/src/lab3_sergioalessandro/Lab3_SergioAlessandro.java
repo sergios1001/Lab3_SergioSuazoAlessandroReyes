@@ -5,27 +5,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class Lab3_SergioAlessandro {
     
     public static Scanner leer = new Scanner(System.in);
@@ -37,21 +16,6 @@ public class Lab3_SergioAlessandro {
     public static ArrayList<Equipo> equipos = new ArrayList();
     public static ArrayList<Jugadas> jugadas = new ArrayList();
     public static ArrayList<Dueño> dueños = new ArrayList();
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     public static void main(String[] args) {
         jugadas.add(new Jugadas("La mejor", "cuatro pases en el area propia y darle el pase a Kobe y que haga todo", 100));
@@ -88,6 +52,7 @@ public class Lab3_SergioAlessandro {
         equipos.get(0).getJugadas().add(jugadas.get(0));
         equipos.get(0).getJugadas().add(jugadas.get(1));
         equipos.get(0).getJugadas().add(jugadas.get(2));
+        
         char resp = 's';
         while (resp == 's') {
             System.out.println("Que opcion quiere utilizar:"
@@ -130,6 +95,7 @@ public class Lab3_SergioAlessandro {
                                 case 1://base
                                     System.out.println("Cual es el nombre del jugador: ");
                                     nombre = leer.nextLine();
+                                    leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
                                     apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
@@ -157,6 +123,7 @@ public class Lab3_SergioAlessandro {
                                 case 2://escolta
                                     System.out.println("Cual es el nombre del jugador: ");
                                     nombre = leer.nextLine();
+                                    leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
                                     apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
@@ -184,6 +151,7 @@ public class Lab3_SergioAlessandro {
                                 case 3://alero
                                     System.out.println("Cual es el nombre del jugador: ");
                                     nombre = leer.nextLine();
+                                    leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
                                     apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
@@ -211,6 +179,7 @@ public class Lab3_SergioAlessandro {
                                 case 4://pivot
                                     System.out.println("Cual es el nombre del jugador: ");
                                     nombre = leer.nextLine();
+                                    leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
                                     apellido = leer.nextLine();
                                     System.out.println("Que numero de camisa utilizara: ");
@@ -238,6 +207,7 @@ public class Lab3_SergioAlessandro {
                                 case 5://centro
                                     System.out.println("Cual es el nombre del jugador: ");
                                     nombre = leer.next();
+                                    leer.nextLine();
                                     System.out.println("Cual es el apellido del jugador: ");
                                     apellido = leer.next();
                                     System.out.println("Que numero de camisa utilizara: ");
@@ -648,7 +618,7 @@ public class Lab3_SergioAlessandro {
                             System.out.println("Elija el equipo que desea modificar el jugador: ");
                             int n=leer.nextInt();
                             for (int i = 0; i < equipos.get(n).getJugadores().size(); i++) {
-                                System.out.println(i+" "+equipos.get(n).getJugadores().get(i));
+                                System.out.println(i+" "+equipos.get(n).getJugadores().get(i).getNombre());
                             }
                             System.out.println("Elija el jugador a modificar: ");
                             int m=leer.nextInt();
@@ -777,7 +747,7 @@ public class Lab3_SergioAlessandro {
                             System.out.println("Elija el equipo que desea modificar el entrenador: ");
                             int n=leer.nextInt();
                             for (int i = 0; i < equipos.get(n).getEntrenadores().size(); i++) {
-                                System.out.println(i+" "+equipos.get(n).getEntrenadores().get(i));
+                                System.out.println(i+" "+equipos.get(n).getEntrenadores().get(i).getNombre());
                             }
                             System.out.println("Elija el entrenador a modificar: ");
                             int m=leer.nextInt();
@@ -837,7 +807,7 @@ public class Lab3_SergioAlessandro {
                             System.out.println("Elija el equipo que desea modificar el medico: ");
                             int n=leer.nextInt();
                             for (int i = 0; i < equipos.get(n).getMedicos().size(); i++) {
-                                System.out.println(i+" "+equipos.get(n).getMedicos().get(i));
+                                System.out.println(i+" "+equipos.get(n).getMedicos().get(i).getNombre());
                             }
                             System.out.println("Elija el medico a modificar: ");
                             int m=leer.nextInt();
@@ -1007,18 +977,9 @@ public class Lab3_SergioAlessandro {
                     break;
                 default:
                     resp = 'n';
-            }
-        }
-
-        
-        
-        
-        
-        
-        
-        
-        
-    }
+            }//fin del switch menu
+        }//fin del while
+    }//fin del main
     
     
     
